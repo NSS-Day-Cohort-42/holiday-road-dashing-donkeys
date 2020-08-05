@@ -9,12 +9,12 @@ const contentTarget = document.querySelector(".filters__eateries")
 const eventHub = document.querySelector(".container")
 
 // Capture that the user generated a change event by the browser
-contentTarget.addEventListener("change", (changeEvent) => {
+contentTarget.addEventListener("eateryChange", (EateryEvent) => {
 
     // Construct the event based on agreement with Steve
     const customEvent = new CustomEvent("eaterySelected", {
         detail: { 
-            eateryId: changeEvent.target.value
+            eateryId: EateryEvent.target.value
             
         }
     })
@@ -34,7 +34,7 @@ const render = eateryCollection => {
             ${
                 eateryCollection.map(
                     eateryObject => {
-                        return `<option value="${ eateryObject.fullName }">${eateryObject.fullName}</option>`
+                        return `<option value="${ eateryObject.businessName }">${eateryObject.businessName}</option>`
                     }
                 ).join("")
             }

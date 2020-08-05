@@ -18,7 +18,7 @@ contentTarget.addEventListener("change", (changeEvent) => {
             
         }
     })
-    debugger
+    
     eventHub.dispatchEvent(customEvent)
 })
 
