@@ -1,7 +1,6 @@
 import "../Settings.js"
 import {key} from "../Settings.js"
 
-console.log(key)
 
 let parks = []
 
@@ -15,6 +14,8 @@ export const getParks = () => {
         .then(response => response.json())
         .then(parsedParks => {
             parks = parsedParks.data
-            console.log(parks)
+            
         })
 }
+
+        
