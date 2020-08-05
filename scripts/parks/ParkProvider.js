@@ -2,7 +2,6 @@ import "../Settings.js"
 import {key} from "../Settings.js"
 
 
-
 let parks = []
 
 export const useParks = () => {
