@@ -14,11 +14,7 @@ export const getParks = () => {
     return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key}`)
         .then(response => response.json())
         .then(parsedParks => {
-            parks = parsedParks
-            
+            parks = parsedParks.data
+            console.log(parks)
         })
 }
-
-        
-
-
