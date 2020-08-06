@@ -1,13 +1,17 @@
-import {useWeather} from "./WeatherProvider.js"
+import {useWeather,getWeather} from "./WeatherProvider.js"
 import {weatherHTML} from "./weatherHTML.js"
 
 const contentTarget=document.querySelector(".weather")
+const eventHub=document.querySelector(".container")
 
-export const WeatherList=()=>{
+eventHub.addEventListener("parkSelected",event=>{
+    const park=event.detail
+    getWeather(park)
+    .then(()=>{
     const weatherArray=useWeather()
-    let content=""
-    content+=weatherArray.forEach(weatherObj=>{
-        weatherHTML(weatherObj)
+    
+    contentTarget.innerHTML=weatherArray.map((weatherObj)=>{
+        return weatherHTML(weatherObj)
+    }).join("")
     })
-    contentTarget.innerHTML=content
-}
+})

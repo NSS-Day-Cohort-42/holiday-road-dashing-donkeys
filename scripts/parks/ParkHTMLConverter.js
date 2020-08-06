@@ -7,7 +7,7 @@
 
 export const ParkHTMLConverter = (park) => {
     return `
-        <section class="criminal">
+        <section class="selected">
             <h4>${park.fullName}</h4>
             <button id="park-details">Details</button>
         </section>
