@@ -5,11 +5,12 @@ import { EateryDetail} from "./EateryDetail.js"
 
 //const contentTarget = document.querySelector(".eateryList")
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".eateryList")
+const contentTarget = document.querySelector(".iteneraryPreview")
 
 eventHub.addEventListener("eaterySelected", event => {
     //eatery id
     const selectedEatery = event.detail.name
+    console.log(selectedEatery)
     
     const allEateries = useEateries()
     const findEatery = allEateries.find((eatery) => {
@@ -34,5 +35,5 @@ const render = (eateryArray) => {
 export const EateryList = () => {
     getEateries()
         .then(EateryDetail)
-        console.log("renders dialog values")
+        
 }
