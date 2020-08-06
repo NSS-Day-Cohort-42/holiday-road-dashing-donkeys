@@ -1,16 +1,13 @@
-// eventHub.dispatchEvent(attractionEvent)
-//     }
-//     if (clickEvent.target.id === "attractionDialog") {
-//         closeAttractionDialog()
-//     }
-// })
+export const attractionHTMLConverter = (attraction) => {
+    return `
 
-// export const AttractiomHTMLConverter = (attraction) => {
-//     return `
-//         <section class="attraction">
-//             <h4>${attraction.name}</h4>
-             
-//             <button id="criminal__alibiButton--${ criminal.id }">Alibis</button>
-//         </section>
-//     `
-// }
+        <section class="selectedAttraction">
+            <h5 class="attractionName">${attraction.name}</h5>
+            <button id="attractionDetail--${attraction.id}">Details</button>
+            <dialog class="attraction--${attraction.id}"
+            <p class="attraction__description">${attraction.description}</p>
+            <p class="attraction__location">${attraction.city}, ${attraction.state}</p>
+        </dialog>
+        </section>
+    `
+}

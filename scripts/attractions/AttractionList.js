@@ -1,23 +1,29 @@
 import { useAttractions, getAttractions } from "./AttractionProvider.js";
 import { attractionHTMLConverter } from "./AttractionHTMLConverter.js";
+import { attractionDetail } from "./AttractionDetail.js";
 
-const contentTarget = document.querySelector(".attractionContainer")
+const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".attractionList")
+
+eventHub.addEventListener("attractionSelected", event => {
+    const selectedAttraction = event.detail.name
+    const allAttractions = useAttractions()
+    const findAttraction = allAttractions.find((attraction) => {
+        return parseInt(selectedAttraction) === attraction.id
+    })
+    render(findAttraction)
+})
+
+const render = (attractionArray) => {
+    contentTarget.innerHTML = `
+        <div class="selectedAttraction">
+            ${attractionHTMLConverter(attractionArray)}
+        </div>
+            `
+}
+
 
 export const AttractionList = () => {
-
     getAttractions()
-        .then(() => {
-            const attractionArray = useAttractions()
-            let attractionHTMLRepresentations = ""
-            attractionArray.forEach(attraction => {
-                attractionHTMLRepresentations += attractionHTMLConverter(attraction)
-            })
-
-            contentTarget.innerHTML = `
-                <h2>Attractions</h2>
-                <article class="parkList">
-                ${ attractionHTMLRepresentations }
-                </article>
-                `
-        })
-} 
+        .then(attractionDetail) 
+}

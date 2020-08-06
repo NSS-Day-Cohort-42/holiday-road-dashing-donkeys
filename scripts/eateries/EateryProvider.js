@@ -1,8 +1,6 @@
 import "../Settings.js"
 
 
-
-
 let eateries = []
 
 export const useEateries = () => {
