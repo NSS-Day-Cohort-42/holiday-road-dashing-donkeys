@@ -10,7 +10,7 @@ export const ParkList = () => {
             const parkArray = useParks()
             let parkHTMLRepresentations = ""
             parkArray.forEach(park => {
-                parkHTMLRepresentations += ParkHTMLConverter(park)
+                parkHTMLRepresentations = ParkHTMLConverter(park)
             })
 
             contentTarget.innerHTML = `
