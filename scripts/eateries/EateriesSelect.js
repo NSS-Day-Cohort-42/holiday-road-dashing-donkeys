@@ -1,29 +1,30 @@
 import {getEateries, useEateries} from "./EateryProvider.js"
 
 
-const contentTarget = document.querySelector(".foodSelector")
-const evenHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".filters__eateries")
+const eventHub = document.querySelector(".container")
 
 contentTarget.addEventListener("change", (changeEvent) => {
-    if(changeEvent.target.id === "eateriesDropdown") {
+    if(changeEvent.target.id === "food") {
         const businessName = changeEvent.target.value
         const customEvent = new CustomEvent("eaterySelected", {
             detail : {
                 name : businessName
             }
         })
-        evenHub.dispatchEvent(customEvent)
+        
+        eventHub.dispatchEvent(customEvent)
     }
-}
+})
 
 const render = eateriesCollection => {
     contentTarget.innerHTML = `
-        <select class="eateriesDropdown" id="food">
+        <select class="dropdown" id="food">
             <option value="0">Select Food</option>
         ${
             eateriesCollection.map(
                 eateryObj => {
-                    return `<option value="${eateryObj.id}"> ${eateryObj.name}</option>`
+                    return `<option value="${eateryObj.id}"> ${eateryObj.businessName}</option>`
                 }
             ).join("")
         }
@@ -35,5 +36,6 @@ export const EaterySelect = () => {
     getEateries().then(() => {
         const eateries = useEateries()
         render(eateries)
+        
     })
 }

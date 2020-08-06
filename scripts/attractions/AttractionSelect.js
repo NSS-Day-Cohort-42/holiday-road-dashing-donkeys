@@ -2,39 +2,39 @@
  *   ConvictionSelect component that renders a select HTML element
  *   which lists all convictions in the Glassdale PD API
  */
-import { useParks, getParks } from "./ParkProvider.js"
+import { useAttractions, getAttractions } from "./AttractionProvider.js"
 
 // Get a reference to the DOM element where the <select> will be rendered
-const contentTarget = document.querySelector(".filters__parks")
+const contentTarget = document.querySelector(".filters__attractions")
 const eventHub = document.querySelector(".container")
 
 // Capture that the user generated a change event by the browser
-contentTarget.addEventListener("change", (changeEvent) => {
+contentTarget.addEventListener("attractionChange", (AttractionEvent) => {
 
     // Construct the event based on agreement with Steve
-    const customEvent = new CustomEvent("parkSelected", {
+    const customEvent = new CustomEvent("attractionSelected", {
         detail: { 
-            parkId: changeEvent.target.value
+            attractionId: AttractionEvent.target.value
             
         }
     })
-    
+
     eventHub.dispatchEvent(customEvent)
 })
 
-const render = parksCollection => {
+const render = attractionCollection => {
     /*
         Use interpolation here to invoke the map() method on
         the convictionsCollection to generate the option elements.
         Look back at the example provided above.
     */
     contentTarget.innerHTML = `
-        <select class="dropdown" id="parkSelect">
-            <option value="0">Please select a park...</option>
+        <select class="dropdown" id="attractionSelect">
+            <option value="0">Please select a attraction...</option>
             ${
-                parksCollection.map(
-                    parkObject => {
-                        return `<option value="${ parkObject.fullName }">${parkObject.fullName}</option>`
+                attractionCollection.map(
+                    attractionObject => {
+                        return `<option value="${ attractionObject.name }">${attractionObject.name}</option>`
                     }
                 ).join("")
             }
@@ -42,10 +42,10 @@ const render = parksCollection => {
     `
 }
 
-export const parkSelect = () => {
-    getParks().then(() => {
+export const attractionSelect = () => {
+    getAttractions().then(() => {
         // Get all convictions from application state
-        const parks = useParks()
-        render(parks)
+        const attractions = useAttractions()
+        render(attractions)
     })
 }
