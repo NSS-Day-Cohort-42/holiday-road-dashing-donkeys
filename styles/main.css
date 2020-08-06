@@ -1,9 +1,1 @@
-
-section {
-    flex-basis: 20%;
-    border: 1px solid black;
-    padding: 0.5em;
-    margin: 2em;
-    text-align: left;
-    flex-direction: column;
-}
+@import "./weather/weather.css";

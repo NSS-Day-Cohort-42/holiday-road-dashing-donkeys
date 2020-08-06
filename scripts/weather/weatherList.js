@@ -10,8 +10,15 @@ eventHub.addEventListener("parkSelected",event=>{
     .then(()=>{
     const weatherArray=useWeather()
     
-    contentTarget.innerHTML=weatherArray.map((weatherObj)=>{
+    contentTarget.innerHTML+=`
+    <h2>Five Day Forcast</h2>
+    <section class=weather--section>
+    ${weatherArray.map((weatherObj)=>{
+        const weatherTime=weatherObj.dt_txt.split(" ")
+        if(weatherTime[1]==="12:00:00"){
         return weatherHTML(weatherObj)
-    }).join("")
+    }
+    }).join("")}
+    </section>`
     })
 })
