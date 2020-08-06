@@ -31,13 +31,20 @@ const render = parksCollection => {
     contentTarget.innerHTML = `
         <select class="dropdown" id="parkSelect">
             <option value="0">Please select a park...</option>
+            
+            var txt = document.getElementById("txtvalue").value;
+            document.getElementById("textParagraph").innerHTML = txt;
             ${
                 parksCollection.map(
                     parkObject => {
                         return `<option value="${ parkObject.fullName }">${parkObject.fullName}</option>`
                     }
+ 
                 ).join("")
+                
             }
+            
+
         </select>
     `
 }
@@ -45,6 +52,7 @@ const render = parksCollection => {
 export const parkSelect = () => {
     getParks().then(() => {
         // Get all convictions from application state
+        
         const parks = useParks()
         render(parks)
     })
