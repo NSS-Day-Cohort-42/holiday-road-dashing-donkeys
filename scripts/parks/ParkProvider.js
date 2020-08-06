@@ -1,4 +1,4 @@
-import "../Settings.js"
+//import "../Settings.js"
 import {key} from "../Settings.js"
 
 

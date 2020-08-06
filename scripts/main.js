@@ -1,10 +1,12 @@
-import { eaterySelect } from "./eateries/EaterySelect.js";
-import { parkSelect } from "./parks/ParkSelect.js";
+import { parkSelect } from "./parks/ParkSelect.js"
+import { EaterySelect } from "./eateries/EateriesSelect.js"
 import { attractionSelect } from "./attractions/AttractionSelect.js"
 import { ParkList } from "./parks/ParkList.js";
-import { useWeather } from "./weather/WeatherProvider.js";
+import { EateryList } from "./eateries/EateriesList.js";
+import {WeatherList} from "./weather/weatherList.js"
 parkSelect()
-.then(useWeather())
-eaterySelect()
 attractionSelect()
+EaterySelect()
 ParkList()
+WeatherList()
+EateryList()
