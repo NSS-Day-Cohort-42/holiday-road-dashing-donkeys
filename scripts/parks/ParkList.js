@@ -12,22 +12,22 @@ eventHub.addEventListener("parkSelected", parkSelectedEvent => {
     const allParks = useParks()
 
     
-    const filteredByParks = allParks.filter((park) => {
+    const filteredByParks = allParks.find((park) => {
         return parkChosen === park.fullName
         
        
     })
     debugger
-    render(filteredByParks)
+    render(parkSelectedEvent.detail)
     
     
 })
 
-const render = (parkArray) => {
+const render = (parkObject) => {
     contentTarget.innerHTML = `
     <div class="selectedPark">
         ${
-            ParkHTMLConverter(parkArray)
+            ParkHTMLConverter(parkObject)
         }
         </div>
         `
@@ -37,5 +37,4 @@ const render = (parkArray) => {
 export const ParkList = () => {
     getParks()
         .then(ParkDetail)
-        console.log("renders dialog values")
 }
