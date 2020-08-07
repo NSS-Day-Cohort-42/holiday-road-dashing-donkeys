@@ -7,11 +7,11 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("click", clickEvent => {  //find correct selector to extract values from selected lists to then render to the itinerary
     if(clickEvent.target.id === "save") {
 
-        const eateryName = document.querySelector(".selectedEatery").innerHTML //this isn't working like i though
+        const eateryName = document.querySelector(".")
         
         const attractionName = document.querySelector("selectedBizzare")
         
-        const parkName = document.querySelector("selectedPark")
+        const parkName = document.querySelector(".parkList")
     }
 
     const newItinerary = {
