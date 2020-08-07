@@ -6,6 +6,10 @@ export const EateryDetail = () => {
             const eateryDetail = clickEvent.target.id.split("--")[1]
             const contentTarget = document.querySelector(`.food--${eateryDetail}`)
             contentTarget.showModal()
+        } else if (clickEvent.target.id.includes("eateryClose")) {
+            const dialogClass = document.querySelector("dialog")
+            dialogClass.close()
+            
         }
-    })
-}
+})}
+   

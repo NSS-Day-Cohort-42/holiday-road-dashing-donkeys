@@ -1,4 +1,3 @@
-
 import { useParks, getParks } from "./ParkProvider.js"
 
 
@@ -7,19 +6,35 @@ const eventHub = document.querySelector(".container")
 
 
 contentTarget.addEventListener("change", (changeEvent) => {
-    if(changeEvent.target.id === "description") {
-        const fullName = changeEvent.target.value
-    
+    const parkName=changeEvent.target.value
+    const parkArray=useParks()
+    const correctParkArray=parkArray.filter(park=>{
+        return parkName===park.fullName
+    }    
+    )
+    const correctPark=correctParkArray[0]
+    console.log(correctPark)
     
     const customEvent = new CustomEvent("parkSelected", {
         detail: {
-            fullName : fullName
+            parkId: correctPark.id,
+            parkName:correctPark.fullName,
+            phoneNumberArray:correctPark.contacts.phoneNumber,
+            emailArray:correctPark.contacts.emailAddresses,
+            state:correctPark.states,
+            activitiesArray:correctPark.activities,
+            entranceFeeArray:correctPark.EntranceFee,
+            hoursOfOperationArray:correctPark.operatingHous,
+            topicsArray:correctPark.topics,
+            description:correctPark.description,
+            addressesArray:correctPark.addresses,
+
 
         }
     })
 
     eventHub.dispatchEvent(customEvent)
-    }
+    
 })
 
 const render = parksCollection => {
@@ -30,12 +45,10 @@ const render = parksCollection => {
             ${
         parksCollection.map(
             parkObject => {
-                return `<option value="${parkObject.id}">${parkObject.fullName}</option>`
+                return `<option value="${parkObject.fullName}">${parkObject.fullName}</option>`
             }
-
         ).join("")
         }     
-
         </select>
     `
 }

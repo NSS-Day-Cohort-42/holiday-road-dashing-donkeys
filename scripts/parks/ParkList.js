@@ -7,15 +7,20 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("parkSelected", parkSelectedEvent => {
     
-    const parkChosen = parkSelectedEvent.detail.fullName
+    const parkChosen = parkSelectedEvent.detail.parkName
+    console.log(parkChosen)
     const allParks = useParks()
 
     
-    const filteredByParks = allParks.find((park) => {
-        return parkChosen === park.id
+    const filteredByParks = allParks.filter((park) => {
+        return parkChosen === park.fullName
+        
+       
     })
-
+    debugger
     render(filteredByParks)
+    
+    
 })
 
 const render = (parkArray) => {
