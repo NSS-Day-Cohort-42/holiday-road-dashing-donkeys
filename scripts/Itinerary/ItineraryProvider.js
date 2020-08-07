@@ -12,7 +12,7 @@ export const useItinerary = () => {
 }
 
 export const getItineraries = () => {
-    return fetch('http://localhost:8088/itineraries')
+    return fetch('http://localhost:3000/itineraries')
         .then(response => response.json())
         .then(parsedItineraries => {
             itineraries = parsedItineraries
@@ -20,7 +20,7 @@ export const getItineraries = () => {
 }
 
 export const saveItinerary = (itinerary) => {
-    return fetch('http://localhost:8088/itineraries', {
+    return fetch('http://localhost:3000/itineraries', {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"

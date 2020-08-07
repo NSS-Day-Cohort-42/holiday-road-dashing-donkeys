@@ -12,7 +12,7 @@ contentTarget.addEventListener("change", (changeEvent) => {
                 name : businessName
             }
         })
-        console.log(businessName)
+        
         eventHub.dispatchEvent(customEvent)
     }
 })
