@@ -1,9 +1,17 @@
-import { useParks, getParks } from "./ParkProvider.js";
+//import { useParks, getParks } from "./ParkProvider.js";
 import { ParkHTMLConverter } from "./ParkHTMLConverter.js";
 
 const contentTarget = document.querySelector(".parkContainer")
+const eventHub=document.querySelector(".container")
 
-export const ParkList = () => {
+eventHub.addEventListener("parkSelected", selectedEvent=>{
+    contentTarget.innerHTML=`
+    <h2>Park</h2>
+    <article class="parkList">
+    ${ParkHTMLConverter(selectedEvent.detail)}
+    </article>`
+})
+/*export const ParkList = () => {
 
     getParks()
         .then(() => {
@@ -20,4 +28,4 @@ export const ParkList = () => {
                 </article>
                 `
         })
-} 
+} */

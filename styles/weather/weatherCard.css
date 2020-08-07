@@ -1,0 +1,7 @@
+.weather--day{
+    border-width:0px 3px;
+    border-color: blue;
+    border-style: solid;
+    width:19%;
+    background-color: skyblue;
+}

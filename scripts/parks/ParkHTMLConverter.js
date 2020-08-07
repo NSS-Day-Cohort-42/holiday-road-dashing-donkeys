@@ -5,10 +5,10 @@
 //     }
 // })
 
-export const ParkHTMLConverter = (park) => {
+export const ParkHTMLConverter = (parkObj) => {
     return `
-        <section class="criminal">
-            <h4>${park.fullName}</h4>
+        <section class="selected">
+            <h4>${parkObj.parkName}</h4>
             <button id="park-details">Details</button>
         </section>
     `

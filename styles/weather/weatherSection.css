@@ -1,0 +1,4 @@
+.weather--section{
+    display: flex;
+    flex-wrap: wrap;
+}
