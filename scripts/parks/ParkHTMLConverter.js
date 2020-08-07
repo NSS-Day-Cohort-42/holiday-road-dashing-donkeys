@@ -1,16 +1,16 @@
-// eventHub.dispatchEvent(parkEvent)
-//     }
-//     if (clickEvent.target.id === "parksDialog") {
-//         closeParkDialog()
-//     }
-// })
+
 
 export const ParkHTMLConverter = (park) => {
     return `
     
-        <section class="criminal">
+        <section class="park">
             <h4>${park.fullName}</h4>
-            <button id="park-details">Details</button>
+            <button id="parkDetail--${park.id}">Details</button>
+            <dialog class="description--${park.id}"
+                <p class="park__description">${park.description}</p>
+
+            </dialog>
+           
         </section>
     `
 }
