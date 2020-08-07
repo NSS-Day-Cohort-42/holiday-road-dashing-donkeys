@@ -1,5 +1,4 @@
 
-
 export const EateryHTMLConv = (eateryArray) => {
     return `
         <h5 class="selectedEatery">${eateryArray.businessName}</h5>

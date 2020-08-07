@@ -9,7 +9,7 @@ export const useWeather = () => {
 
 
 export const getWeather = (park) => {
-    console.log(park.addressesArray[0].city)
+ 
     return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${park.addressesArray[0].city},${park.state},us&mode=json&appid=${key.weatherKey}`)
         .then(response => response.json())
         .then(parsedWeather => {
