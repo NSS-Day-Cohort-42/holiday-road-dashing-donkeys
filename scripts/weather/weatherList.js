@@ -10,7 +10,7 @@ eventHub.addEventListener("parkSelected",event=>{
     .then(()=>{
     const weatherArray=useWeather()
     
-    contentTarget.innerHTML+=`
+    contentTarget.innerHTML=`
     <h2>Five Day Forcast</h2>
     <section class=weather--section>
     ${weatherArray.map((weatherObj)=>{
