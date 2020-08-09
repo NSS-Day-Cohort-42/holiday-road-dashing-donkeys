@@ -6,8 +6,8 @@ export const attractionDetail = () => {
             const attractionDetail = clickEvent.target.id.split("--")[1]
             const contentTarget = document.querySelector(`.attraction--${attractionDetail}`)
             contentTarget.showModal()
-        }else if (clickEvent.target.id.includes("attractionClose")) {
-            const dialogClass = document.querySelector("dialog")
+        }else if (clickEvent.target.id === "attractionClose") {
+            const dialogClass = document.getElementById("attractionClose")
             dialogClass.close()
             
         }

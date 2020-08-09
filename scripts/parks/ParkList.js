@@ -17,7 +17,7 @@ eventHub.addEventListener("parkSelected", parkSelectedEvent => {
         
        
     })
-    debugger
+    
     render(parkSelectedEvent.detail)
     
     

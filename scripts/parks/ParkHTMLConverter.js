@@ -5,8 +5,8 @@ export const ParkHTMLConverter = (park) => {
     
         <section class="park">
             <h4>${park.parkName}</h4>
-          <button id="parkDetail--${park.parkId}">Details</button>
-            <dialog class="description--${park.parkId}"
+            <button id="parkDetail--${park.parkId}">Details</button>
+            <dialog class="description--${park.parkId}" id="parkClose">
                 <p class="park__description">${park.description}</p>
                 <p class="park__phoneNumber">${park.phoneNumberArray[0].phoneNumber}</p>
                 <p class="park__states">${park.states}</p>
@@ -23,7 +23,7 @@ export const ParkHTMLConverter = (park) => {
                             return `${topics.name}`
                         }).join("")}</p>
                 <p class="park__address">${park.addressesArray[0].city}</p>
-            
+                <button id="parkClose">Close</button>
             </dialog>
            
         </section>
