@@ -7,7 +7,7 @@ const eventHub=document.querySelector(".container")
 eventHub.addEventListener("parkSelected", selectedEvent=>{
     contentTarget.innerHTML=`
     <h3>Park</h3>
-    <article class="parkList">
+    <article class="parkList ${selectedEvent.detail.parkId}">
     ${ParkHTMLConverter(selectedEvent.detail)}
     </article>`
 })

@@ -24,7 +24,7 @@ contentTarget.addEventListener("change", (changeEvent) => {
         detail: { 
             parkId: correctPark.id,
             parkName:correctPark.fullName,
-            phoneNumberArray:correctPark.contacts.phoneNumber,
+            phoneNumberArray:correctPark.contacts.phoneNumbers,
             emailArray:correctPark.contacts.emailAddresses,
             state:correctPark.states,
             activitiesArray:correctPark.activities,

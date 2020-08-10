@@ -16,7 +16,7 @@ eventHub.addEventListener("attractionSelected", event => {
 
 const render = (attractionArray) => {
     contentTarget.innerHTML = `
-        <div class="selectedAttraction">
+        <div class="selectedAttraction ${attractionArray.id}">
             ${attractionHTMLConverter(attractionArray)}
         </div>
             `
