@@ -14,12 +14,9 @@ const ParkFilter = () => {
     })
     
     const filteredParks = parksActivityArray.filter(park => park.activities.find(activity => activity.name === "Geocaching"))
-    console.log(filteredParks)
+    
           
-        //const parkGeocaching = parkObj.activities.filter(activity => activity.name === "Geocaching")
-        // if(parkGeocaching.length > 0) {
-        //     return parkObj
-        // }
+       
         
    
    
@@ -34,8 +31,10 @@ const render = (recArray) => {
         }
     ).join("")
 
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
+        <h4 class="parksRec__title">Parks with Geocaching</h4>
         <div class="parkRec-container">
+            
             ${recsToHTML}
         </div>
     `
@@ -47,20 +46,3 @@ export const ParkRec = () => {
 }
 
 
-// const filteredParks = allparks.map(park => {
-//     return {
-//         parkName: park.fullName,
-//         activities: park.activities.forEach(
-//             (activity) => {
-//                 return activity.name.includes("Geocachin")
-//             }
-//         )
-//     }
-// })
-
-
-// const geoCaching = filteredParks.map(
-    //     (parks) => {
-    //         return parks.activities.name
-    //     }).filter(parks  === "Geocaching")
-    // console.log(geoCaching)

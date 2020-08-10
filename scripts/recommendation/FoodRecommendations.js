@@ -28,6 +28,7 @@ const render = (recArray) => {
     ).join("")
         
     contentTarget.innerHTML = `
+        <h4 class="foodRec_title">Recommended Food</h4>
         <div class="foodRec-container">
             ${recsToHTML}
         </div>
