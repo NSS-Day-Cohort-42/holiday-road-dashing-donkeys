@@ -1,16 +1,25 @@
 .itenerarySaves{
     display: flex;
     flex-direction: column;
-    width: 50%;
+   
    
     
 }
 .saved{
     background-color: goldenrod;
     border: 3px groove white;
+    width: 35%;
 }
 .iteneraryPreview{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    
+}
+.previewBox {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: red;
+    border: 3px groove white;
+
 }
