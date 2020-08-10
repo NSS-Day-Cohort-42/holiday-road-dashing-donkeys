@@ -25,7 +25,7 @@ eventHub.addEventListener("parkSelected", parkSelectedEvent => {
 
 const render = (parkObject) => {
     contentTarget.innerHTML = `
-    <div class="selectedPark">
+    <div class="selectedPark ${parkObject.parkId}">
         ${
             ParkHTMLConverter(parkObject)
         }

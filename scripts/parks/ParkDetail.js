@@ -12,7 +12,5 @@ export const ParkDetail = () => {
             const dialogClass = document.getElementById("parkClose")
             dialogClass.close()
         }
-        
-        
     })
 }

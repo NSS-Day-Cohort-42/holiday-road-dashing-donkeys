@@ -13,7 +13,6 @@ contentTarget.addEventListener("change", (changeEvent) => {
     }    
     )
     const correctPark=correctParkArray[0]
-    console.log(correctPark)
     
     const customEvent = new CustomEvent("parkSelected", {
         detail: {

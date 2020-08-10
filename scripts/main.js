@@ -7,11 +7,15 @@ import "./weather/weatherList.js"
 import { AttractionList } from "./attractions/AttractionList.js";
 import { FoodRec } from "./recommendation/FoodRecommendations.js";
 import { ParkRec } from "./recommendation/ParkRecommendation.js";
+import { ItineraryList } from "./Itinerary/ItineraryList.js";
+import "./Itinerary/ShowSaveItineraryButton.js"
 //import "./eateries/EateryDetail.js"
 parkSelect()
+EateryList()
 attractionSelect()
 EaterySelect()
-EateryList()
+AttractionList()
+ItineraryList()
 ParkList()
 AttractionList()
 FoodRec()
