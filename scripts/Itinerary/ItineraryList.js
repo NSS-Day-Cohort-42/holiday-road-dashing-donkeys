@@ -13,6 +13,7 @@ eventHub.addEventListener("click", clickEvent => {  //find correct selector to e
         const eateryName = document.querySelector(".selectedFood").className.split(" ")
         const attractionName = document.querySelector(".selectedAttraction").className.split(" ")
         const parkName = document.querySelector(".selectedPark").className.split(" ")
+        debugger
         const newItinerary = {
             eatery : parseInt(eateryName[1]),
             park : parkName[1],
@@ -40,8 +41,9 @@ const render = (itineraryArray) => {
         const findParks=allParks.find((park)=>{
             return currentItinerary.park===park.id
         })
+        debugger
         const findAttractions=allAttractions.find((attraction)=>{
-            return currentItinerary.attractionId=attraction.id
+            return currentItinerary.attractionId===attraction.id
         })
         objectArray=[findEatery,findParks, findAttractions]
     }

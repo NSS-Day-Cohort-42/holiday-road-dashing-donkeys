@@ -1,0 +1,6 @@
+.itenerarySaves{
+    display: flex;
+    flex-direction: column;
+    background-color: navy;
+    border: 3px solid red;
+}
