@@ -13,5 +13,6 @@ export const getParks = () => {
         .then(response => response.json())
         .then(parsedParks => {
             parks = parsedParks
+            
         })
 }
