@@ -17,6 +17,12 @@
       "park": "DE0A8012-5324-4F5C-98DA-0EE6589FDFB3",
       "attractionId": 16,
       "id": 3
+    },
+    {
+      "eatery": 8,
+      "park": "E7E4E103-5FA9-45AC-8843-05DE554CDBB7",
+      "attractionId": 5,
+      "id": 4
     }
   ],
   "data": [

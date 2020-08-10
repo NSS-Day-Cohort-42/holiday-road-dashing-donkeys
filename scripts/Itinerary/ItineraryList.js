@@ -9,11 +9,11 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", clickEvent => {  //find correct selector to extract values from selected lists to then render to the itinerary
     if(clickEvent.target.id === "save") {
-        debugger
+        
         const eateryName = document.querySelector(".selectedFood").className.split(" ")
         const attractionName = document.querySelector(".selectedAttraction").className.split(" ")
         const parkName = document.querySelector(".selectedPark").className.split(" ")
-        debugger
+        
         const newItinerary = {
             eatery : parseInt(eateryName[1]),
             park : parkName[1],
@@ -41,7 +41,7 @@ const render = (itineraryArray) => {
         const findParks=allParks.find((park)=>{
             return currentItinerary.park===park.id
         })
-        debugger
+        
         const findAttractions=allAttractions.find((attraction)=>{
             return currentItinerary.attractionId===attraction.id
         })

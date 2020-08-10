@@ -1,0 +1,10 @@
+.itineraryBox {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+}
+.recommended{
+    background-color: lightblue
+
+}
