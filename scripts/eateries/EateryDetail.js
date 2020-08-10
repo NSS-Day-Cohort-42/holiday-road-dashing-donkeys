@@ -10,7 +10,7 @@ export const EateryDetail = () => {
             contentTarget.showModal()
         } else if(clickEvent.target.id === "eateryClose") {
             const dialogClass = document.getElementById("eateryClose")
-            console.log(dialogClass)
+            
             dialogClass.close()
             
         }
