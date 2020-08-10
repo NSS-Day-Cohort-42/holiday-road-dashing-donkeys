@@ -5,6 +5,7 @@ import { ParkList } from "./parks/ParkList.js";
 import { EateryList } from "./eateries/EateriesList.js";
 import "./weather/weatherList.js"
 import { AttractionList } from "./attractions/AttractionList.js";
+import { FoodRec } from "./recommendation/FoodRecommendations.js";
 //import "./eateries/EateryDetail.js"
 parkSelect()
 attractionSelect()
@@ -12,3 +13,4 @@ EaterySelect()
 EateryList()
 ParkList()
 AttractionList()
+FoodRec()
