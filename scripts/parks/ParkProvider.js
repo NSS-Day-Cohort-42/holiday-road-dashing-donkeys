@@ -1,4 +1,5 @@
-import {key} from "../Settings.js"
+
+
 
 let parks = []
 
@@ -14,5 +15,3 @@ export const getParks = () => {
             parks = parsedParks
         })
 }
-
-        

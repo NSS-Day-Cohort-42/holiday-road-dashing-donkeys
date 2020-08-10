@@ -1,5 +1,24 @@
 {
-  "itineraries": [],
+  "itineraries": [
+    {
+      "eatery": 7,
+      "park": "6B1D053D-714F-46D1-B410-04BE868F14C1",
+      "attractionId": 3,
+      "id": 1
+    },
+    {
+      "eatery": 15,
+      "park": "813548D1-F8EA-4C07-8878-17FB3C385378",
+      "attractionId": 8,
+      "id": 2
+    },
+    {
+      "eatery": 19,
+      "park": "DE0A8012-5324-4F5C-98DA-0EE6589FDFB3",
+      "attractionId": 16,
+      "id": 3
+    }
+  ],
   "data": [
     {
       "contacts": {

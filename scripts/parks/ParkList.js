@@ -1,31 +1,28 @@
-//import { useParks, getParks } from "./ParkProvider.js";
+import { useParks, getParks } from "./ParkProvider.js";
 import { ParkHTMLConverter } from "./ParkHTMLConverter.js";
+import { ParkDetail } from "./ParkDetail.js";
 
 const contentTarget = document.querySelector(".parkContainer")
-const eventHub=document.querySelector(".container")
+const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("parkSelected", selectedEvent=>{
-    contentTarget.innerHTML=`
-    <h3>Park</h3>
-    <article class="parkList ${selectedEvent.detail.parkId}">
-    ${ParkHTMLConverter(selectedEvent.detail)}
-    </article>`
+eventHub.addEventListener("parkSelected", parkSelectedEvent => {
+    render(parkSelectedEvent.detail)
+    
+    
 })
-/*export const ParkList = () => {
 
+const render = (parkObject) => {
+    contentTarget.innerHTML = `
+    <div class="selectedPark ${parkObject.parkId}">
+        ${
+            ParkHTMLConverter(parkObject)
+        }
+        </div>
+        `
+}
+
+
+export const ParkList = () => {
     getParks()
-        .then(() => {
-            const parkArray = useParks()
-            let parkHTMLRepresentations = ""
-            parkArray.forEach(park => {
-                parkHTMLRepresentations = ParkHTMLConverter(park)
-            })
-
-            contentTarget.innerHTML = `
-                <h2>Parks</h2>
-                <article class="parkList">
-                ${ parkHTMLRepresentations }
-                </article>
-                `
-        })
-} */
+        .then(ParkDetail)
+}
