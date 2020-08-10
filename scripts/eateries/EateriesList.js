@@ -1,8 +1,6 @@
 import {useEateries, getEateries} from "./EateryProvider.js"
 import {EateryHTMLConv} from "./EateriesHTML.js"
 import { EateryDetail} from "./EateryDetail.js"
-import {saveItinerary} from "../Itinerary/ItineraryProvider.js"
-
 
 //const contentTarget = document.querySelector(".eateryList")
 const eventHub = document.querySelector(".container")
@@ -36,6 +34,4 @@ const render = (eateryArray) => {
 export const EateryList = () => {
     getEateries()
         .then(EateryDetail)
-        
-        
 }
