@@ -15,7 +15,7 @@ eventHub.addEventListener("eaterySelected", event => {
     const findEatery = allEateries.find((eatery) => {
         return parseInt(selectedEatery) === eatery.id   
     })
-    console.log("renders from found value")
+    
     render(findEatery)
         
 })
@@ -34,5 +34,5 @@ const render = (eateryArray) => {
 export const EateryList = () => {
     getEateries()
         .then(EateryDetail)
-        console.log("renders dialog values")
+        
 }
