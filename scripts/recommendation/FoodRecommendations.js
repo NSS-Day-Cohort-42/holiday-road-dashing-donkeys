@@ -8,8 +8,8 @@ const Foodfilter = () => {
     const filteredFood = allEateries.filter(food => food.ameneties.wifi === true)
     let threeRecs = []
     for (let i = 0; i < 3; i++) {
-        const testThree = filteredFood[Math.floor(Math.random() * filteredFood.length)]
-            threeRecs.push(testThree)
+        const threeFood = filteredFood[Math.floor(Math.random() * filteredFood.length)]
+            threeRecs.push(threeFood)
     }
     
     render(threeRecs)

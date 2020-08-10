@@ -13,15 +13,19 @@ const ParkFilter = () => {
         }
     })
     
-    const filteredParks = parksActivityArray.filter(park => park.activities.find(activity => activity.name === "Geocaching"))
-    
+    const filteredParks = parksActivityArray.filter(park => park.activities.find(activity => activity.name === "Geocaching" || activity.name === "Backcountry Hiking"))
+    let threeParks = []
+    for(let i=0; i < 3; i++) {
+        const threeRecs = filteredParks[Math.floor(Math.random()* filteredParks.length)]
+            threeParks.push(threeRecs)
+    }
           
        
         
    
    
     
-    render(filteredParks)
+    render(threeParks)
 }
 
 const render = (recArray) => {
@@ -32,7 +36,7 @@ const render = (recArray) => {
     ).join("")
 
     contentTarget.innerHTML += `
-        <h4 class="parksRec__title">Parks with Geocaching</h4>
+        <h4 class="parksRec__title">Recommended National Parks</h4>
         <div class="parkRec-container">
             
             ${recsToHTML}
