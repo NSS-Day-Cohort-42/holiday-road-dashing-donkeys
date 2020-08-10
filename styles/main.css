@@ -1,2 +1,8 @@
 @import "./weather/weather.css";
 @import "./savedItinerarys/itinterary.css";
+@import "./filters.css";
+@import "./itineraries.css";
+
+body {
+    background-color: forestgreen  
+}
